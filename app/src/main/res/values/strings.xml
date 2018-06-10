@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">SAMKAL</string>
     <string name="akan_datang">Akan Datang</string>
+    <string name="masukkan_no_plat">Masukkan nomor plat anda</string>
+    <string name="lihat_info_pkb">Lihat info PKB</string>
+    <string name="unknown_error">Unknown error occured</string>
+    <string name="processing">Processing</string>
+    <string name="please_wait">Please wait...</string>
+
+    <!-- Info pkb section -->
+    <string name="info_kendaraan">Info kendaraan</string>
+    <string name="merk">Merk            : %1s</string>
+    <string name="model">Model          : %1s</string>
+    <string name="tahun">Tahun          : %1s</string>
+    <string name="warna">Warna          : %1s</string>
+    <string name="no_rangka">No Rangka  : %1s </string>
+    <string name="no_mesin">No Mesin    : %1s</string>
+
+    <string name="error_not_registered">Plat nomor %1s belum terdaftar</string>
 </resources>
