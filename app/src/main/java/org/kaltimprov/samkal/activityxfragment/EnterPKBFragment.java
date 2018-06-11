@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +16,12 @@ import android.widget.EditText;
 
 import org.kaltimprov.samkal.R;
 import org.kaltimprov.samkal.helper.ActivityHelper;
-import org.kaltimprov.samkal.network.RESTHelper;
 
 public class EnterPKBFragment extends Fragment {
 
-    EditText editPlatNomor;
+    EditText editPlatNomor1;
+    EditText editPlatNomor2;
+    EditText editPlatNomor3;
     Button buttonLihatInfoPKB;
 
     @Nullable
@@ -31,11 +32,17 @@ public class EnterPKBFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        editPlatNomor = view.findViewById(R.id.edit_plat_nomor);
-        buttonLihatInfoPKB = view.findViewById(R.id.button_lihat_info);
-        editPlatNomor.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        editPlatNomor1 = view.findViewById(R.id.edit_plat_nomor_1);
+        editPlatNomor2 = view.findViewById(R.id.edit_plat_nomor_2);
+        editPlatNomor3 = view.findViewById(R.id.edit_plat_nomor_3);
 
-        editPlatNomor.addTextChangedListener(new TextWatcher() {
+        buttonLihatInfoPKB = view.findViewById(R.id.button_lihat_info);
+        buttonLihatInfoPKB.setEnabled(false);
+        editPlatNomor1.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        editPlatNomor2.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        editPlatNomor3.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+
+        editPlatNomor1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -45,7 +52,7 @@ public class EnterPKBFragment extends Fragment {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.length()>0)
                     if(s.charAt(0)!='K') {
-                        editPlatNomor.setError(s.charAt(0)+ " bukan plat nomor kalimantan");
+                        editPlatNomor1.setError(s.charAt(0)+ " bukan plat nomor kalimantan");
                         buttonLihatInfoPKB.setEnabled(false);
                     }
                     else buttonLihatInfoPKB.setEnabled(true);
@@ -60,12 +67,32 @@ public class EnterPKBFragment extends Fragment {
         buttonLihatInfoPKB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(editPlatNomor.getText().toString().trim().equals("")){
-                    editPlatNomor.setError("Harus diisi.");
+                if(editPlatNomor1.getText().toString().trim().equals("")){
+                    editPlatNomor1.setError("Harus diisi.");
                     return;
                 }
+                if(editPlatNomor2.getText().toString().trim().equals("")){
+                    editPlatNomor2.setError("Harus diisi.");
+                    return;
+                }
+                if(editPlatNomor3.getText().toString().trim().equals("")){
+                    editPlatNomor3.setError("Harus diisi.");
+                    return;
+                }
+                //Data sent to Web Service below
+                String toWebService = editPlatNomor1.getText().toString().trim()
+                        +editPlatNomor3.getText().toString().trim()
+                        +" "
+                        +editPlatNomor2.getText().toString().trim();
+
                 Bundle args = new Bundle();
-                args.putString("no_polisi", editPlatNomor.getText().toString());
+                args.putString("no_polisi", toWebService);
+                args.putString("null_no_polisi",
+                        editPlatNomor1.getText().toString()
+                + " "
+                + editPlatNomor2.getText().toString()
+                + " "
+                + editPlatNomor3.getText().toString());
                 ResultPKBFragment resultPKBFragment = new ResultPKBFragment();
                 resultPKBFragment.setArguments(args);
 
@@ -74,4 +101,5 @@ public class EnterPKBFragment extends Fragment {
             }
         });
     }
+
 }

@@ -42,6 +42,7 @@ public class ResultPKBFragment extends Fragment {
     Unbinder unbinder;
     private RESTHelper rRest;
     private String nomorPolisi;
+    private String nullErrorString;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class ResultPKBFragment extends Fragment {
         rRest = new RESTHelper();
         try {
             nomorPolisi = getArguments().getString("no_polisi");
+            nullErrorString = getArguments().getString("null_no_polisi");
             getInfoPKB(nomorPolisi);
         } catch (NullPointerException e) {
             ActivityHelper.makeToast(getContext(), getString(R.string.unknown_error),
@@ -83,7 +85,7 @@ public class ResultPKBFragment extends Fragment {
                         //Out of bounds because data not available
                         ActivityHelper.makeToast(getContext(),
                                 String.format(getString(R.string.error_not_registered),
-                                        nomorPolisi), Toast.LENGTH_LONG);
+                                        nullErrorString), Toast.LENGTH_LONG);
                         getActivity().finish();
                     }
                 }

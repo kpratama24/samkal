@@ -15,15 +15,56 @@
            android:textColor="@android:color/black"
            android:textSize="22sp"/>
 
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="8dp"
+           android:padding="4dp"
+           android:orientation="horizontal">
+
            <EditText
-               android:id="@+id/edit_plat_nomor"
-               android:layout_width="match_parent"
+               android:id="@+id/edit_plat_nomor_1"
+               android:layout_width="0dp"
                android:layout_height="wrap_content"
                android:textSize="22sp"
+               android:maxLength="2"
+               android:inputType="text"
+               android:layout_weight="0.5"
+               android:layout_marginStart="8dp"
+               android:layout_marginEnd="8dp"
                android:textStyle="bold"
-               android:textColor="@android:color/black"
-               android:layout_marginTop="8dp"
-               android:hint="Contoh : KU 1234 KU"/>
+               android:textAlignment="center"
+               android:hint="KU"/>
+
+           <EditText
+               android:id="@+id/edit_plat_nomor_2"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:textSize="22sp"
+               android:layout_weight="1"
+               android:inputType="number"
+               android:maxLength="5"
+               android:layout_marginStart="8dp"
+               android:textStyle="bold"
+               android:textAlignment="center"
+               android:layout_marginEnd="8dp"
+               android:hint="1234"/>
+
+           <EditText
+               android:id="@+id/edit_plat_nomor_3"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:textSize="22sp"
+               android:inputType="text"
+               android:maxLength="4"
+               android:layout_weight="0.5"
+               android:textAlignment="center"
+               android:textStyle="bold"
+               android:layout_marginStart="8dp"
+               android:layout_marginEnd="8dp"
+               android:hint="SD"/>
+       </LinearLayout>
+
 
        <Button
            android:id="@+id/button_lihat_info"
