@@ -76,16 +76,21 @@ public class ResultPKBFragment extends Fragment {
                         textNoRangka.setText(String.format(getString(R.string.no_rangka),
                                 response.body().get(0).getNORANGKA()));
                         textTahun.setText(String.format(getString(R.string.tahun),
-                                response.body().get(0).getTHRAKITAN()));
+                                response.body().get(0).getTHBUATAN()));
                         // TODO implement textWarna
                         textWarna.setText(String.format(getString(R.string.warna),
-                                String.valueOf(0)));
+                                response.body().get(0).getWARNAKB()));
                     }
                     catch (IndexOutOfBoundsException e){
                         //Out of bounds because data not available
                         ActivityHelper.makeToast(getContext(),
                                 String.format(getString(R.string.error_not_registered),
                                         nullErrorString), Toast.LENGTH_LONG);
+                        getActivity().finish();
+                    }
+                    catch(NullPointerException e){
+                        ActivityHelper.makeToast(getContext(),
+                                getString(R.string.error_server), Toast.LENGTH_LONG);
                         getActivity().finish();
                     }
                 }

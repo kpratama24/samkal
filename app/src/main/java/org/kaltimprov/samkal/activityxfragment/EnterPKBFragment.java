@@ -31,6 +31,14 @@ public class EnterPKBFragment extends Fragment {
     }
 
     @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString("edit1", editPlatNomor1.getText().toString());
+        outState.putString("edit2", editPlatNomor2.getText().toString());
+        outState.putString("edit3", editPlatNomor3.getText().toString());
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         editPlatNomor1 = view.findViewById(R.id.edit_plat_nomor_1);
         editPlatNomor2 = view.findViewById(R.id.edit_plat_nomor_2);
@@ -41,6 +49,12 @@ public class EnterPKBFragment extends Fragment {
         editPlatNomor1.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
         editPlatNomor2.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
         editPlatNomor3.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+
+        if(savedInstanceState != null){  // Activity is recreated
+            editPlatNomor1.setText(savedInstanceState.getString("edit1"));
+            editPlatNomor2.setText(savedInstanceState.getString("edit2"));
+            editPlatNomor3.setText(savedInstanceState.getString("edit3"));
+        }
 
         editPlatNomor1.addTextChangedListener(new TextWatcher() {
             @Override
@@ -68,15 +82,11 @@ public class EnterPKBFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(editPlatNomor1.getText().toString().trim().equals("")){
-                    editPlatNomor1.setError("Harus diisi.");
+                    editPlatNomor1.setError(getString(R.string.error_input_required));
                     return;
                 }
                 if(editPlatNomor2.getText().toString().trim().equals("")){
-                    editPlatNomor2.setError("Harus diisi.");
-                    return;
-                }
-                if(editPlatNomor3.getText().toString().trim().equals("")){
-                    editPlatNomor3.setError("Harus diisi.");
+                    editPlatNomor2.setError(getString(R.string.error_input_required));
                     return;
                 }
                 //Data sent to Web Service below
@@ -87,12 +97,20 @@ public class EnterPKBFragment extends Fragment {
 
                 Bundle args = new Bundle();
                 args.putString("no_polisi", toWebService);
-                args.putString("null_no_polisi",
-                        editPlatNomor1.getText().toString()
-                + " "
-                + editPlatNomor2.getText().toString()
-                + " "
-                + editPlatNomor3.getText().toString());
+                if(editPlatNomor3.getText().toString().isEmpty()){
+                    args.putString("null_no_polisi",
+                            editPlatNomor1.getText().toString()
+                                    + "%20"
+                                    + editPlatNomor2.getText().toString());
+                }
+                else {
+                    args.putString("null_no_polisi",
+                            editPlatNomor1.getText().toString()
+                                    + "%20"
+                                    + editPlatNomor2.getText().toString()
+                                    + "%20"
+                                    + editPlatNomor3.getText().toString());
+                }
                 ResultPKBFragment resultPKBFragment = new ResultPKBFragment();
                 resultPKBFragment.setArguments(args);
 

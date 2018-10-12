@@ -11,6 +11,6 @@ import retrofit2.http.Query;
 
 public interface GetPostDataService {
 
-    @GET("cek_data1.php/")
+    @GET("infopkb.php/")
     Call<List<InfoPKB>> getInfoPKB(@Query("no_polisi") String nomorPolisi);
 }
