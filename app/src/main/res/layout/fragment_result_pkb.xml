@@ -90,6 +90,127 @@
                     android:textSize="18sp"/>
 
             </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/view_background_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/color_pkb_background"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="30dp"
+                    android:textSize="18sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:text="@string/info_pajak_kendaraan"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:id="@+id/text_pkb_pok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pkb_pok"
+                android:layout_marginTop="8dp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/text_pkb_den"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pkb_den"
+                android:layout_marginTop="8dp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/text_swdkllj_pok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/swdkllj_pok"
+                android:layout_marginTop="8dp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/text_swdkllj_den"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/swdkllj_den"
+                android:layout_marginTop="8dp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/text_pnbp_stnk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pnbp_stnk"
+                android:layout_marginTop="8dp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/text_pnbp_tnkb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pnbp_tnkb"
+                android:layout_marginTop="8dp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/text_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total"
+                android:layout_marginTop="8dp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/text_tgl_pajak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tgl_pajak"
+                android:layout_marginTop="8dp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/text_tgl_stnk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tgl_stnk"
+                android:layout_marginTop="8dp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/text_milik_ke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/milik_ke"
+                android:layout_marginTop="8dp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/text_keterangan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/keterangan"
+                android:layout_marginTop="8dp"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

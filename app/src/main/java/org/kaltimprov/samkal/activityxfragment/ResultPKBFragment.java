@@ -40,6 +40,28 @@ public class ResultPKBFragment extends Fragment {
     @BindView(R.id.text_no_mesin)
     TextView textNoMesin;
     Unbinder unbinder;
+    @BindView(R.id.text_pkb_pok)
+    TextView textPkbPok;
+    @BindView(R.id.text_pkb_den)
+    TextView textPkbDen;
+    @BindView(R.id.text_swdkllj_pok)
+    TextView textSwdklljPok;
+    @BindView(R.id.text_swdkllj_den)
+    TextView textSwdklljDen;
+    @BindView(R.id.text_pnbp_stnk)
+    TextView textPnbpStnk;
+    @BindView(R.id.text_pnbp_tnkb)
+    TextView textPnbpTnkb;
+    @BindView(R.id.text_total)
+    TextView textTotal;
+    @BindView(R.id.text_tgl_pajak)
+    TextView textTglPajak;
+    @BindView(R.id.text_tgl_stnk)
+    TextView textTglStnk;
+    @BindView(R.id.text_milik_ke)
+    TextView textMilikKe;
+    @BindView(R.id.text_keterangan)
+    TextView textKeterangan;
     private RESTHelper rRest;
     private String nomorPolisi;
     private String nullErrorString;
@@ -62,48 +84,80 @@ public class ResultPKBFragment extends Fragment {
 
     private void getInfoPKB(final String nomorPolisi) {
         showProgressBar();
-            rRest.getInfoPKB(nomorPolisi, new Callback<List<InfoPKB>>() {
-                @Override
-                public void onResponse(Call<List<InfoPKB>> call, Response<List<InfoPKB>> response) {
-                    hideProgressBar();
-                    try {
-                        textModel.setText(String.format(getString(R.string.model),
-                                response.body().get(0).getNMMODELKB()));
-                        textMerk.setText(String.format(getString(R.string.merk),
-                                response.body().get(0).getNMMEREKKB()));
-                        textNoMesin.setText(String.format(getString(R.string.no_mesin),
-                                response.body().get(0).getNOMESIN()));
-                        textNoRangka.setText(String.format(getString(R.string.no_rangka),
-                                response.body().get(0).getNORANGKA()));
-                        textTahun.setText(String.format(getString(R.string.tahun),
-                                response.body().get(0).getTHBUATAN()));
-                        // TODO implement textWarna
-                        textWarna.setText(String.format(getString(R.string.warna),
-                                response.body().get(0).getWARNAKB()));
-                    }
-                    catch (IndexOutOfBoundsException e){
-                        //Out of bounds because data not available
-                        ActivityHelper.makeToast(getContext(),
-                                String.format(getString(R.string.error_not_registered),
-                                        nullErrorString), Toast.LENGTH_LONG);
-                        getActivity().finish();
-                    }
-                    catch(NullPointerException e){
-                        ActivityHelper.makeToast(getContext(),
-                                getString(R.string.error_server), Toast.LENGTH_LONG);
-                        getActivity().finish();
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<List<InfoPKB>> call, Throwable t) {
-                    hideProgressBar();
+        rRest.getInfoPKB(nomorPolisi, new Callback<List<InfoPKB>>() {
+            @Override
+            public void onResponse(Call<List<InfoPKB>> call, Response<List<InfoPKB>> response) {
+                hideProgressBar();
+                try {
+                    textModel.setText(String.format(getString(R.string.model),
+                            response.body().get(0).getNMMODELKB()));
+                    textMerk.setText(String.format(getString(R.string.merk),
+                            response.body().get(0).getNMMEREKKB()));
+                    textNoMesin.setText(String.format(getString(R.string.no_mesin),
+                            response.body().get(0).getNOMESIN()));
+                    textNoRangka.setText(String.format(getString(R.string.no_rangka),
+                            response.body().get(0).getNORANGKA()));
+                    textTahun.setText(String.format(getString(R.string.tahun),
+                            response.body().get(0).getTHBUATAN()));
+                    textPkbPok.setText(String.format(getString(R.string.pkb_pok),
+                            response.body().get(0).getPKBPOK()));
+                    textPkbDen.setText(String.format(getString(R.string.pkb_den),
+                            response.body().get(0).getPKBDEN()));
+                    textSwdklljPok.setText(String.format(getString(R.string.swdkllj_pok),
+                            response.body().get(0).getSWDPOK()));
+                    textSwdklljDen.setText(String.format(getString(R.string.swdkllj_den),
+                            response.body().get(0).getSWDDEN()));
+                    textTotal.setText(String.format(getString(R.string.total),
+                            response.body().get(0).getTOTALBAYAR()));
+                    textTglPajak.setText(String.format(getString(R.string.tgl_pajak),
+                            response.body().get(0).getTGAKHIRPAJAK()));
+                    textTglStnk.setText(String.format(getString(R.string.tgl_stnk),
+                            response.body().get(0).getTGAKHIRSTNKB()));
+                    textMilikKe.setText(String.format(getString(R.string.milik_ke),
+                            response.body().get(0).getMILIKKE()));
+                    setKeterangan(response.body().get(0));
+                    // TODO implement textWarna
+                    textWarna.setText(String.format(getString(R.string.warna),
+                            response.body().get(0).getWARNAKB()));
+                } catch (IndexOutOfBoundsException e) {
+                    //Out of bounds because data not available
                     ActivityHelper.makeToast(getContext(),
-                            t.getMessage(),
-                            Toast.LENGTH_SHORT);
+                            String.format(getString(R.string.error_not_registered),
+                                    nullErrorString), Toast.LENGTH_LONG);
+                    getActivity().finish();
+                } catch (NullPointerException e) {
+                    ActivityHelper.makeToast(getContext(),
+                            getString(R.string.error_server), Toast.LENGTH_LONG);
+                    getActivity().finish();
                 }
-            });
+            }
+
+            @Override
+            public void onFailure(Call<List<InfoPKB>> call, Throwable t) {
+                hideProgressBar();
+                ActivityHelper.makeToast(getContext(),
+                        t.getMessage(),
+                        Toast.LENGTH_SHORT);
+            }
+        });
+    }
+
+    private void setKeterangan(InfoPKB infoPKB) {
+        switch (infoPKB.getKDERROR()){
+            case "0 ":
+                textKeterangan.setText("Kode bayar : "+ infoPKB.getKDBAYAR());
+            case "Y ":
+                textKeterangan.setText(String.format(getString(R.string.keterangan),"KBM DIBLOCKIR"));
+            case "B ":
+                textKeterangan.setText(String.format(getString(R.string.keterangan),"BELUM MASUK MASA PEMBAYARAN PAJAK"));
+            case "C ":
+                textKeterangan.setText(String.format(getString(R.string.keterangan),"STNK 5 TAHUN MASA BERLAKU HABIS, LAKUKAN PEMBAYARAN DISAMSAT INDUK"));
+            case "A ":
+                textKeterangan.setText(String.format(getString(R.string.keterangan),"PLAT KUNING DAN MERAH BELUM BISA DILAYANI"));
+            case "G ":
+                textKeterangan.setText(String.format(getString(R.string.keterangan),"NIK TIDAK TERDAFTAR"));
         }
+    }
 
     @Nullable
     @Override
@@ -115,13 +169,13 @@ public class ResultPKBFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
-        super.onDestroyView();
+        super.onDestroyView() ;
         unbinder.unbind();
     }
 
     ProgressDialog progress;
 
-    private void showProgressBar(){
+    private void showProgressBar() {
 
         progress = new ProgressDialog(getContext());
         progress.setTitle(getString(R.string.processing));
@@ -131,13 +185,12 @@ public class ResultPKBFragment extends Fragment {
         progress.show();
         try {
             Thread.sleep(500);
-        }
-        catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    private void hideProgressBar(){
+    private void hideProgressBar() {
         progress.hide();
     }
 }
