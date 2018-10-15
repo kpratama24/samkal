@@ -5,5 +5,22 @@
     <WebView
         android:id="@+id/webview_pdf"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></WebView>
+        android:layout_height="match_parent"/>
+
+    <ProgressBar
+        android:id="@+id/progress_wait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/text_please_wait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/please_wait"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/progress_wait"
+        android:layout_centerInParent="true"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
 </RelativeLayout>

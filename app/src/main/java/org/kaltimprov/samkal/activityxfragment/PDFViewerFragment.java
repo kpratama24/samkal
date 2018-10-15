@@ -7,9 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import org.kaltimprov.samkal.R;
 
@@ -23,6 +24,10 @@ public class PDFViewerFragment extends Fragment {
     @BindView(R.id.webview_pdf)
     WebView webviewPdf;
     Unbinder unbinder;
+    @BindView(R.id.progress_wait)
+    ProgressBar progressWait;
+    @BindView(R.id.text_please_wait)
+    TextView textPleaseWait;
 
     @Nullable
     @Override
@@ -35,8 +40,16 @@ public class PDFViewerFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         webviewPdf.getSettings().setJavaScriptEnabled(true);
-        String pdf_url = "https://assets.ossur.com/library/18099/ReSolve-Halo-Patient-Information-Manual.pdf";
-        webviewPdf.setWebViewClient(new WebViewClient());
+//        String pdf_url = "http://bpprdku.net/docpdf/JadwalSamling.pdf";
+        String pdf_url = "https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf"; //testing purposes
+        webviewPdf.setWebViewClient(new WebViewClient(){
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                progressWait.setVisibility(View.GONE);
+                textPleaseWait.setVisibility(View.GONE);
+            }
+        });
         webviewPdf.loadUrl("http://drive.google.com/viewerng/viewer?embedded=true&url=" + pdf_url);
         super.onViewCreated(view, savedInstanceState);
     }
@@ -44,6 +57,7 @@ public class PDFViewerFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        webviewPdf.destroy();
         unbinder.unbind();
     }
 }
