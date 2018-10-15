@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">SAMKAL</string>
     <string name="akan_datang">Akan Datang</string>
+    <string name="mekanisme_e_samsat">Mekanisme E-Samsat</string>
     <string name="masukkan_no_plat">Masukkan nomor plat anda</string>
     <string name="lihat_info_pkb">Lihat info PKB</string>
     <string name="unknown_error">Unknown error occured</string>
@@ -29,9 +30,12 @@
     <string name="keterangan">KETERANGAN        : %1s </string>
 
 
-
     <!-- Error section -->
     <string name="error_input_required">Harus diisi.</string>
     <string name="error_not_registered">Plat nomor %1s belum terdaftar.</string>
     <string name="error_server">Terjadi kesalahan teknis, mohon mengulang pencarian Info PKB.</string>
+
+    <!-- PDF Viewer Section -->
+    <string name="pdf_viewer_title">PDF Viewer</string>
+    <string name="pdf_viewer_status">You are viewing %1s</string>
 </resources>

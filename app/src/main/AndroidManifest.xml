@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activityxfragment.MainActivity" />
-        <activity android:name=".activityxfragment.InfoPKBActivity"></activity>
+        <activity android:name=".activityxfragment.InfoPKBActivity" />
+        <activity android:name=".activityxfragment.PDFViewerActivity"></activity>
     </application>
 
 </manifest>

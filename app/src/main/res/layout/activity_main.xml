@@ -40,6 +40,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:orientation="vertical">
 
                     <ImageView
@@ -55,8 +58,11 @@
                         android:textAlignment="center"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:visibility="gone"
+                    android:id="@+id/linear_mekanisme_e_samsat"
                     android:layout_width="0dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -65,18 +71,18 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_info_black_24dp"/>
+                        android:src="@drawable/ic_wifi_black_24dp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/akan_datang"
+                        android:text="@string/mekanisme_e_samsat"
                         android:textAlignment="center"/>
                 </LinearLayout>
                 <LinearLayout
+                    android:visibility="gone"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <ImageView
