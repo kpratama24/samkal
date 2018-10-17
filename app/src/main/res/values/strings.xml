@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">SAMKAL</string>
+    <string name="info_dan_layanan">Info dan Layanan</string>
+    <string name="info_pkb">Info PKB</string>
     <string name="bpprd">BPPRD</string>
     <string name="akan_datang">Akan Datang</string>
     <string name="mekanisme_e_samsat">Mekanisme E-Samsat</string>
