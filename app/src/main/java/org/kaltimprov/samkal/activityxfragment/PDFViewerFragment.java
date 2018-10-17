@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,8 @@ public class PDFViewerFragment extends Fragment {
     @BindView(R.id.text_please_wait)
     TextView textPleaseWait;
 
+    private String pdf_url;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,9 +42,9 @@ public class PDFViewerFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        setPDFUrl();
+        Log.d("PDF_url", pdf_url);
         webviewPdf.getSettings().setJavaScriptEnabled(true);
-//        String pdf_url = "http://bpprdku.net/docpdf/JadwalSamling.pdf";
-        String pdf_url = "https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf"; //testing purposes
         webviewPdf.setWebViewClient(new WebViewClient(){
             @Override
             public void onPageFinished(WebView view, String url) {
@@ -52,6 +55,53 @@ public class PDFViewerFragment extends Fragment {
         });
         webviewPdf.loadUrl("http://drive.google.com/viewerng/viewer?embedded=true&url=" + pdf_url);
         super.onViewCreated(view, savedInstanceState);
+    }
+
+    /**
+     * Method to set pdf url according to pdf_type obtained from Intent
+     */
+    private void setPDFUrl() {
+        String pdf_url_prefix = "http://bpprdku.net/docpdf/"; //subject to change accordingly
+        try {
+            int pdf_type = ((PDFViewerActivity) getActivity()).getPdf_type();
+            Log.d("PDF_TYPE",String.valueOf(pdf_type));
+            switch (pdf_type){
+                case 1:
+                    pdf_url = pdf_url_prefix+"MekanismeEsamsat.pdf";
+                    ((PDFViewerActivity) getActivity()).getSupportActionBar().setSubtitle(
+                            getString(R.string.mekanisme_e_samsat)
+                    );
+                    break;
+                case 2:
+                    pdf_url = pdf_url_prefix+"LokasiPelayananSamsat.pdf";
+                    ((PDFViewerActivity) getActivity()).getSupportActionBar().setSubtitle(
+                            getString(R.string.lokasi_e_samsat)
+                    );
+                    break;
+                case 3:
+                    pdf_url = pdf_url_prefix+"PersyaratanPendaftaranSamsat.pdf";
+                    ((PDFViewerActivity) getActivity()).getSupportActionBar().setSubtitle(
+                            getString(R.string.persyaratan_e_samsat)
+                    );
+                    break;
+                case 4:
+                    pdf_url = pdf_url_prefix+"JadwalSamling.pdf";
+                    ((PDFViewerActivity) getActivity()).getSupportActionBar().setSubtitle(
+                            getString(R.string.jadwal_samling)
+                    );
+                    break;
+                case 5:
+                    pdf_url = pdf_url_prefix+"Panduan.pdf";
+                    ((PDFViewerActivity) getActivity()).getSupportActionBar().setSubtitle(
+                            getString(R.string.panduan)
+                    );
+                    break;
+            }
+        }
+        catch (NullPointerException e){
+            e.printStackTrace();
+        }
+
     }
 
     @Override

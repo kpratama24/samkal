@@ -33,9 +33,12 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
+                android:weightSum="4"
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
                     android:id="@+id/linear_info_pkb"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -49,7 +52,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_info_black_24dp"/>
+                        android:src="@drawable/ic_samsat_infopkb"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -58,6 +61,8 @@
                         android:textAlignment="center"/>
                 </LinearLayout>
                 <LinearLayout
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
                     android:id="@+id/linear_mekanisme_e_samsat"
                     android:layout_width="0dp"
                     android:background="?attr/selectableItemBackground"
@@ -71,7 +76,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_wifi_black_24dp"/>
+                        android:src="@drawable/ic_samsat_mekanisme"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -79,7 +84,9 @@
                         android:textAlignment="center"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:visibility="gone"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:id="@+id/linear_lokasi_pelayanan_samsat"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -89,29 +96,81 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_info_black_24dp"/>
+                        android:src="@drawable/ic_samsat_lokasi"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/akan_datang"
+                        android:text="@string/lokasi_e_samsat"
                         android:textAlignment="center"/>
                 </LinearLayout>
                 <LinearLayout
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:id="@+id/linear_persyaratan_e_samsat"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_info_black_24dp"/>
+                        android:src="@drawable/ic_samsat_persyaratan"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/akan_datang"
+                        android:text="@string/persyaratan_e_samsat"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:id="@+id/linear_jadwal_samling"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_samsat_jadwal"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/jadwal_samling"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:id="@+id/linear_panduan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_samsat_panduan"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/panduan"
                         android:textAlignment="center"/>
                 </LinearLayout>
             </LinearLayout>

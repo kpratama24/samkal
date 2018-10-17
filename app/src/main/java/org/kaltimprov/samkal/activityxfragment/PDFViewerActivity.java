@@ -3,6 +3,7 @@ package org.kaltimprov.samkal.activityxfragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 
 import org.kaltimprov.samkal.R;
@@ -16,6 +17,14 @@ public class PDFViewerActivity extends AppCompatActivity {
     @BindView(R.id.my_toolbar)
     Toolbar myToolbar;
 
+    /**
+     * Attribute data :
+     * 1 : Mekanisme E-Samsat
+     * 2 : Lokasi Pelayanan E-Samsat
+     * 3 : Persyaratan E-Samsat
+     * 4 : Jadwal SAMLING
+     * 5 : Panduan
+     */
     private int pdf_type = 0; //PDF to be viewed
 
     @Override
@@ -46,6 +55,10 @@ public class PDFViewerActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Method to get pdf type
+     * @return pdf type
+     */
     public int getPdf_type(){
         return this.pdf_type;
     }

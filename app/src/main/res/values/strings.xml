@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">SAMKAL</string>
+    <string name="bpprd">BPPRD</string>
     <string name="akan_datang">Akan Datang</string>
     <string name="mekanisme_e_samsat">Mekanisme E-Samsat</string>
+    <string name="lokasi_e_samsat">Lokasi Pelayanan E-Samsat</string>
+    <string name="jadwal_samling">Jadwal SAMLING</string>
+    <string name="persyaratan_e_samsat">Persyaratan Pendaftaran Samsat</string>
+    <string name="panduan">Panduan</string>
     <string name="masukkan_no_plat">Masukkan nomor plat anda</string>
     <string name="lihat_info_pkb">Lihat info PKB</string>
     <string name="unknown_error">Unknown error occured</string>
