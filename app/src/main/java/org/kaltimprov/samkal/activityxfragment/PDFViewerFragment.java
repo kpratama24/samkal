@@ -68,33 +68,18 @@ public class PDFViewerFragment extends Fragment {
             switch (pdf_type){
                 case 1:
                     pdf_url = pdf_url_prefix+"MekanismeEsamsat.pdf";
-                    ((PDFViewerActivity) getActivity()).getSupportActionBar().setSubtitle(
-                            getString(R.string.mekanisme_e_samsat)
-                    );
                     break;
                 case 2:
                     pdf_url = pdf_url_prefix+"LokasiPelayananSamsat.pdf";
-                    ((PDFViewerActivity) getActivity()).getSupportActionBar().setSubtitle(
-                            getString(R.string.lokasi_e_samsat)
-                    );
                     break;
                 case 3:
                     pdf_url = pdf_url_prefix+"PersyaratanPendaftaranSamsat.pdf";
-                    ((PDFViewerActivity) getActivity()).getSupportActionBar().setSubtitle(
-                            getString(R.string.persyaratan_e_samsat)
-                    );
                     break;
                 case 4:
                     pdf_url = pdf_url_prefix+"JadwalSamling.pdf";
-                    ((PDFViewerActivity) getActivity()).getSupportActionBar().setSubtitle(
-                            getString(R.string.jadwal_samling)
-                    );
                     break;
                 case 5:
                     pdf_url = pdf_url_prefix+"Panduan.pdf";
-                    ((PDFViewerActivity) getActivity()).getSupportActionBar().setSubtitle(
-                            getString(R.string.panduan)
-                    );
                     break;
             }
         }

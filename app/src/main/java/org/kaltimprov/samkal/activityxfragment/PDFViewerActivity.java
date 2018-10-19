@@ -35,7 +35,6 @@ public class PDFViewerActivity extends AppCompatActivity {
 
         setSupportActionBar(myToolbar);
         if(getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(getString(R.string.pdf_viewer_title));
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
