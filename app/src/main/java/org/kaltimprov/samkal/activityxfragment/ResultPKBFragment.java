@@ -63,7 +63,9 @@ public class ResultPKBFragment extends Fragment {
     @BindView(R.id.text_keterangan)
     TextView textKeterangan;
     private RESTHelper rRest;
-    private String nomorPolisi;
+    private String nomorPolisi1;
+    private String nomorPolisi2;
+    private String nomorPolisi3;
     private String nullErrorString;
 
     @Override
@@ -71,9 +73,12 @@ public class ResultPKBFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         rRest = new RESTHelper();
         try {
-            nomorPolisi = getArguments().getString("no_polisi");
+            nomorPolisi1 = getArguments().getString("no_polisi_1");
+            nomorPolisi2 = getArguments().getString("no_polisi_2");
+            nomorPolisi3 = getArguments().getString("no_polisi_3");
+
             nullErrorString = getArguments().getString("null_no_polisi");
-            getInfoPKB(nomorPolisi);
+            getInfoPKB(nomorPolisi1,nomorPolisi2,nomorPolisi3);
         } catch (NullPointerException e) {
             ActivityHelper.makeToast(getContext(), getString(R.string.unknown_error),
                     Toast.LENGTH_SHORT);
@@ -82,9 +87,9 @@ public class ResultPKBFragment extends Fragment {
         }
     }
 
-    private void getInfoPKB(final String nomorPolisi) {
+    private void getInfoPKB(final String nomorPolisi1, final String nomorPolisi2, final String nomorPolisi3) {
         showProgressBar();
-        rRest.getInfoPKB(nomorPolisi, new Callback<List<InfoPKB>>() {
+        rRest.getInfoPKB(nomorPolisi1, nomorPolisi2, nomorPolisi3, new Callback<List<InfoPKB>>() {
             @Override
             public void onResponse(Call<List<InfoPKB>> call, Response<List<InfoPKB>> response) {
                 hideProgressBar();
@@ -103,6 +108,10 @@ public class ResultPKBFragment extends Fragment {
                             response.body().get(0).getPKBPOK()));
                     textPkbDen.setText(String.format(getString(R.string.pkb_den),
                             response.body().get(0).getPKBDEN()));
+                    textPnbpStnk.setText(String.format(getString(R.string.pnbp_stnk),
+                            response.body().get(0).getBEAADMSTNK()));
+                    textPnbpTnkb.setText(String.format(getString(R.string.pnbp_tnkb),
+                            response.body().get(0).getBEAADMTNKB()));
                     textSwdklljPok.setText(String.format(getString(R.string.swdkllj_pok),
                             response.body().get(0).getSWDPOK()));
                     textSwdklljDen.setText(String.format(getString(R.string.swdkllj_den),
@@ -115,8 +124,8 @@ public class ResultPKBFragment extends Fragment {
                             response.body().get(0).getTGAKHIRSTNKB()));
                     textMilikKe.setText(String.format(getString(R.string.milik_ke),
                             response.body().get(0).getMILIKKE()));
-                    setKeterangan(response.body().get(0));
-                    // TODO implement textWarna
+                    textKeterangan.setText(String.format(String.format(getString(R.string.keterangan),
+                            response.body().get(0).getDESKRIPSI())));
                     textWarna.setText(String.format(getString(R.string.warna),
                             response.body().get(0).getWARNAKB()));
                 } catch (IndexOutOfBoundsException e) {
@@ -140,23 +149,6 @@ public class ResultPKBFragment extends Fragment {
                         Toast.LENGTH_SHORT);
             }
         });
-    }
-
-    private void setKeterangan(InfoPKB infoPKB) {
-        switch (infoPKB.getKDERROR()){
-            case "0 ":
-                textKeterangan.setText("Kode bayar : "+ infoPKB.getKDBAYAR());
-            case "Y ":
-                textKeterangan.setText(String.format(getString(R.string.keterangan),"KBM DIBLOCKIR"));
-            case "B ":
-                textKeterangan.setText(String.format(getString(R.string.keterangan),"BELUM MASUK MASA PEMBAYARAN PAJAK"));
-            case "C ":
-                textKeterangan.setText(String.format(getString(R.string.keterangan),"STNK 5 TAHUN MASA BERLAKU HABIS, LAKUKAN PEMBAYARAN DISAMSAT INDUK"));
-            case "A ":
-                textKeterangan.setText(String.format(getString(R.string.keterangan),"PLAT KUNING DAN MERAH BELUM BISA DILAYANI"));
-            case "G ":
-                textKeterangan.setText(String.format(getString(R.string.keterangan),"NIK TIDAK TERDAFTAR"));
-        }
     }
 
     @Nullable

@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RESTHelper {
 
     private static Retrofit retrofit;
-    private static final String API_BASE_URL = "http://bpprdku.net/android/";
+    private static final String API_BASE_URL = "http://android.bpprdku.net/";
 
     /**
      * Method to get the required retrofit instance
@@ -28,9 +28,16 @@ public class RESTHelper {
         return retrofit;
     }
 
-    public void getInfoPKB(String nomorPolisi, Callback<List<InfoPKB>> callback){
+    /**
+     * Method to get info pkb
+     * @param na plat awal
+     * @param nb plat tengah
+     * @param nc plat akhir
+     * @param callback invokable callback
+     */
+    public void getInfoPKB(String na,String nb, String nc, Callback<List<InfoPKB>> callback){
         GetPostDataService service = getRetrofitInstance().create(GetPostDataService.class);
-        Call<List<InfoPKB>> call = service.getInfoPKB(nomorPolisi);
+        Call<List<InfoPKB>> call = service.getInfoPKB(na, nb, nc);
         call.enqueue(callback);
     }
 }

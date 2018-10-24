@@ -90,14 +90,17 @@ public class EnterPKBFragment extends Fragment {
                     return;
                 }
                 //Data sent to Web Service below
-                String toWebService = editPlatNomor1.getText().toString().trim()
-                        +editPlatNomor3.getText().toString().trim()
-                        +" "
-                        +editPlatNomor2.getText().toString().trim();
+                //TODO NEED CHANGES
+                String na = editPlatNomor1.getText().toString().trim();
+                String nb = editPlatNomor2.getText().toString().trim();
+                String nc = editPlatNomor3.getText().toString().trim();
 
                 Bundle args = new Bundle();
-                args.putString("no_polisi", toWebService);
-                if(editPlatNomor3.getText().toString().isEmpty()){
+                args.putString("no_polisi_1", na);
+                args.putString("no_polisi_2", nb);
+                args.putString("no_polisi_3", nc);
+
+                if(nc.isEmpty()){
                     args.putString("null_no_polisi",
                             editPlatNomor1.getText().toString()
                                     + "%20"

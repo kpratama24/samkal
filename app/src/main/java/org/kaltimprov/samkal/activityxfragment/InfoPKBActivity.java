@@ -28,7 +28,7 @@ public class InfoPKBActivity extends AppCompatActivity {
 
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Info PKB");
+        getSupportActionBar().setTitle(getString(R.string.info_pkb));
 
         ActivityHelper.addFragmentToActivity(getSupportFragmentManager(), new EnterPKBFragment(),
                 R.id.info_pkb_placeholder);

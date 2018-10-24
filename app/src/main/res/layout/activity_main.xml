@@ -34,7 +34,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:weightSum="4"
+                android:weightSum="3"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -44,7 +44,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="?attr/selectableItemBackground"
+                    android:paddingBottom="4dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="8dp"
+                    android:background="@drawable/square_for_main_menu"
                     android:clickable="true"
                     android:focusable="true"
                     android:orientation="vertical">
@@ -66,7 +70,11 @@
                     android:layout_marginEnd="4dp"
                     android:id="@+id/linear_mekanisme_e_samsat"
                     android:layout_width="0dp"
-                    android:background="?attr/selectableItemBackground"
+                    android:paddingBottom="4dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="8dp"
+                    android:background="@drawable/square_for_main_menu"
                     android:clickable="true"
                     android:focusable="true"
                     android:layout_height="wrap_content"
@@ -74,7 +82,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="80dp"
+                        android:layout_width="60dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_samsat_mekanisme"/>
@@ -88,6 +96,11 @@
                     android:layout_marginStart="4dp"
                     android:layout_marginEnd="4dp"
                     android:id="@+id/linear_lokasi_pelayanan_samsat"
+                    android:paddingBottom="4dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="8dp"
+                    android:background="@drawable/square_for_main_menu"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -104,11 +117,27 @@
                         android:text="@string/lokasi_e_samsat"
                         android:textAlignment="center"/>
                 </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
                 <LinearLayout
                     android:layout_marginStart="4dp"
                     android:layout_marginEnd="4dp"
                     android:id="@+id/linear_persyaratan_e_samsat"
                     android:layout_width="0dp"
+                    android:paddingBottom="4dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="8dp"
+                    android:background="@drawable/square_for_main_menu"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -124,20 +153,15 @@
                         android:text="@string/persyaratan_e_samsat"
                         android:textAlignment="center"/>
                 </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:baselineAligned="false"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:weightSum="2"
-                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_marginStart="4dp"
                     android:layout_marginEnd="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="8dp"
+                    android:background="@drawable/square_for_main_menu"
                     android:id="@+id/linear_jadwal_samling"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -161,6 +185,11 @@
                     android:id="@+id/linear_panduan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="8dp"
+                    android:background="@drawable/square_for_main_menu"
                     android:layout_weight="1"
                     android:orientation="vertical">
 

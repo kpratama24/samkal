@@ -7,79 +7,61 @@ import java.io.Serializable;
 
 public class InfoPKB implements Serializable{
 
-    @SerializedName("KD_BAYAR")
-    @Expose
-    private String kDBAYAR;
-    @SerializedName("KD_ERROR")
-    @Expose
-    private String kDERROR;
     @SerializedName("NO_POLISI")
     @Expose
     private String nOPOLISI;
     @SerializedName("NM_MEREK_KB")
     @Expose
-    private String nMMEREKKB;
+    private Object nMMEREKKB;
     @SerializedName("NM_MODEL_KB")
     @Expose
-    private String nMMODELKB;
+    private Object nMMODELKB;
     @SerializedName("TH_BUATAN")
     @Expose
-    private String tHBUATAN;
+    private Object tHBUATAN;
     @SerializedName("WARNA_KB")
     @Expose
-    private String wARNAKB;
+    private Object wARNAKB;
     @SerializedName("NO_RANGKA")
     @Expose
-    private String nORANGKA;
+    private Object nORANGKA;
     @SerializedName("NO_MESIN")
     @Expose
-    private String nOMESIN;
+    private Object nOMESIN;
     @SerializedName("PKB_POK")
     @Expose
-    private String pKBPOK;
+    private Object pKBPOK;
     @SerializedName("PKB_DEN")
     @Expose
-    private String pKBDEN;
+    private Object pKBDEN;
     @SerializedName("SWD_POK")
     @Expose
-    private String sWDPOK;
+    private Object sWDPOK;
     @SerializedName("SWD_DEN")
     @Expose
-    private String sWDDEN;
+    private Object sWDDEN;
     @SerializedName("BEA_ADM_STNK")
     @Expose
-    private String bEAADMSTNK;
+    private Object bEAADMSTNK;
     @SerializedName("BEA_ADM_TNKB")
     @Expose
-    private String bEAADMTNKB;
+    private Object bEAADMTNKB;
     @SerializedName("TOTAL_BAYAR")
     @Expose
-    private String tOTALBAYAR;
+    private Object tOTALBAYAR;
     @SerializedName("TG_AKHIR_PAJAK")
     @Expose
-    private String tGAKHIRPAJAK;
+    private Object tGAKHIRPAJAK;
     @SerializedName("TG_AKHIR_STNKB")
     @Expose
-    private String tGAKHIRSTNKB;
+    private Object tGAKHIRSTNKB;
     @SerializedName("MILIK_KE")
     @Expose
-    private String mILIKKE;
-
-    public String getKDBAYAR() {
-        return kDBAYAR;
-    }
-
-    public void setKDBAYAR(String kDBAYAR) {
-        this.kDBAYAR = kDBAYAR;
-    }
-
-    public String getKDERROR() {
-        return kDERROR;
-    }
-
-    public void setKDERROR(String kDERROR) {
-        this.kDERROR = kDERROR;
-    }
+    private Object mILIKKE;
+    @SerializedName("DESKRIPSI")
+    @Expose
+    private String dESKRIPSI;
+    private final static long serialVersionUID = 1356464623310095732L;
 
     public String getNOPOLISI() {
         return nOPOLISI;
@@ -89,132 +71,140 @@ public class InfoPKB implements Serializable{
         this.nOPOLISI = nOPOLISI;
     }
 
-    public String getNMMEREKKB() {
+    public Object getNMMEREKKB() {
         return nMMEREKKB;
     }
 
-    public void setNMMEREKKB(String nMMEREKKB) {
+    public void setNMMEREKKB(Object nMMEREKKB) {
         this.nMMEREKKB = nMMEREKKB;
     }
 
-    public String getNMMODELKB() {
+    public Object getNMMODELKB() {
         return nMMODELKB;
     }
 
-    public void setNMMODELKB(String nMMODELKB) {
+    public void setNMMODELKB(Object nMMODELKB) {
         this.nMMODELKB = nMMODELKB;
     }
 
-    public String getTHBUATAN() {
+    public Object getTHBUATAN() {
         return tHBUATAN;
     }
 
-    public void setTHBUATAN(String tHBUATAN) {
+    public void setTHBUATAN(Object tHBUATAN) {
         this.tHBUATAN = tHBUATAN;
     }
 
-    public String getWARNAKB() {
+    public Object getWARNAKB() {
         return wARNAKB;
     }
 
-    public void setWARNAKB(String wARNAKB) {
+    public void setWARNAKB(Object wARNAKB) {
         this.wARNAKB = wARNAKB;
     }
 
-    public String getNORANGKA() {
+    public Object getNORANGKA() {
         return nORANGKA;
     }
 
-    public void setNORANGKA(String nORANGKA) {
+    public void setNORANGKA(Object nORANGKA) {
         this.nORANGKA = nORANGKA;
     }
 
-    public String getNOMESIN() {
+    public Object getNOMESIN() {
         return nOMESIN;
     }
 
-    public void setNOMESIN(String nOMESIN) {
+    public void setNOMESIN(Object nOMESIN) {
         this.nOMESIN = nOMESIN;
     }
 
-    public String getPKBPOK() {
+    public Object getPKBPOK() {
         return pKBPOK;
     }
 
-    public void setPKBPOK(String pKBPOK) {
+    public void setPKBPOK(Object pKBPOK) {
         this.pKBPOK = pKBPOK;
     }
 
-    public String getPKBDEN() {
+    public Object getPKBDEN() {
         return pKBDEN;
     }
 
-    public void setPKBDEN(String pKBDEN) {
+    public void setPKBDEN(Object pKBDEN) {
         this.pKBDEN = pKBDEN;
     }
 
-    public String getSWDPOK() {
+    public Object getSWDPOK() {
         return sWDPOK;
     }
 
-    public void setSWDPOK(String sWDPOK) {
+    public void setSWDPOK(Object sWDPOK) {
         this.sWDPOK = sWDPOK;
     }
 
-    public String getSWDDEN() {
+    public Object getSWDDEN() {
         return sWDDEN;
     }
 
-    public void setSWDDEN(String sWDDEN) {
+    public void setSWDDEN(Object sWDDEN) {
         this.sWDDEN = sWDDEN;
     }
 
-    public String getBEAADMSTNK() {
+    public Object getBEAADMSTNK() {
         return bEAADMSTNK;
     }
 
-    public void setBEAADMSTNK(String bEAADMSTNK) {
+    public void setBEAADMSTNK(Object bEAADMSTNK) {
         this.bEAADMSTNK = bEAADMSTNK;
     }
 
-    public String getBEAADMTNKB() {
+    public Object getBEAADMTNKB() {
         return bEAADMTNKB;
     }
 
-    public void setBEAADMTNKB(String bEAADMTNKB) {
+    public void setBEAADMTNKB(Object bEAADMTNKB) {
         this.bEAADMTNKB = bEAADMTNKB;
     }
 
-    public String getTOTALBAYAR() {
+    public Object getTOTALBAYAR() {
         return tOTALBAYAR;
     }
 
-    public void setTOTALBAYAR(String tOTALBAYAR) {
+    public void setTOTALBAYAR(Object tOTALBAYAR) {
         this.tOTALBAYAR = tOTALBAYAR;
     }
 
-    public String getTGAKHIRPAJAK() {
+    public Object getTGAKHIRPAJAK() {
         return tGAKHIRPAJAK;
     }
 
-    public void setTGAKHIRPAJAK(String tGAKHIRPAJAK) {
+    public void setTGAKHIRPAJAK(Object tGAKHIRPAJAK) {
         this.tGAKHIRPAJAK = tGAKHIRPAJAK;
     }
 
-    public String getTGAKHIRSTNKB() {
+    public Object getTGAKHIRSTNKB() {
         return tGAKHIRSTNKB;
     }
 
-    public void setTGAKHIRSTNKB(String tGAKHIRSTNKB) {
+    public void setTGAKHIRSTNKB(Object tGAKHIRSTNKB) {
         this.tGAKHIRSTNKB = tGAKHIRSTNKB;
     }
 
-    public String getMILIKKE() {
+    public Object getMILIKKE() {
         return mILIKKE;
     }
 
-    public void setMILIKKE(String mILIKKE) {
+    public void setMILIKKE(Object mILIKKE) {
         this.mILIKKE = mILIKKE;
+    }
+
+    public String getDESKRIPSI() {
+        return dESKRIPSI;
+    }
+
+    public void setDESKRIPSI(String dESKRIPSI) {
+        this.dESKRIPSI = dESKRIPSI;
     }
 
 }
