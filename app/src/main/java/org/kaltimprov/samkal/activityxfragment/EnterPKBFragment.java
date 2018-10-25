@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.text.method.PasswordTransformationMethod;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,7 +48,7 @@ public class EnterPKBFragment extends Fragment {
         buttonLihatInfoPKB = view.findViewById(R.id.button_lihat_info);
         buttonLihatInfoPKB.setEnabled(false);
         editPlatNomor1.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        editPlatNomor2.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        editPlatNomor2.setTransformationMethod(new NumericKeyBoardTransformationMethod());
         editPlatNomor3.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
 
         if(savedInstanceState != null){  // Activity is recreated
@@ -123,4 +124,10 @@ public class EnterPKBFragment extends Fragment {
         });
     }
 
+}
+class NumericKeyBoardTransformationMethod extends PasswordTransformationMethod {
+    @Override
+    public CharSequence getTransformation(CharSequence source, View view) {
+        return source;
+    }
 }

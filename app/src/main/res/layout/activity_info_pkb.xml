@@ -22,5 +22,31 @@
         android:id="@+id/info_pkb_placeholder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize"
         android:layout_below="@id/my_toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/footer_samsat" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/black"
+            android:text="@string/bpprd_footer_text"
+            android:textAllCaps="true"
+            android:paddingStart="4dp"
+            android:paddingEnd="8dp"
+            android:textStyle="bold"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:layout_alignParentEnd="true"
+            android:textSize="14sp"/>
+    </RelativeLayout>
 </RelativeLayout>

@@ -2,6 +2,7 @@ package org.kaltimprov.samkal.activityxfragment;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -78,7 +79,8 @@ public class ResultPKBFragment extends Fragment {
             nomorPolisi3 = getArguments().getString("no_polisi_3");
 
             nullErrorString = getArguments().getString("null_no_polisi");
-            getInfoPKB(nomorPolisi1,nomorPolisi2,nomorPolisi3);
+            tryGetInfo(nomorPolisi1,nomorPolisi2,nomorPolisi3);
+//            getInfoPKB(nomorPolisi1,nomorPolisi2,nomorPolisi3);
         } catch (NullPointerException e) {
             ActivityHelper.makeToast(getContext(), getString(R.string.unknown_error),
                     Toast.LENGTH_SHORT);
@@ -87,8 +89,44 @@ public class ResultPKBFragment extends Fragment {
         }
     }
 
-    private void getInfoPKB(final String nomorPolisi1, final String nomorPolisi2, final String nomorPolisi3) {
+    /**
+     * Method to check whether the web service already have the pkb data.
+     * @param nomorPolisi1 prefix number.
+     * @param nomorPolisi2 infix number.
+     * @param nomorPolisi3 suffix number.
+     */
+    private void tryGetInfo(final String nomorPolisi1, final String nomorPolisi2, final String nomorPolisi3) {
         showProgressBar();
+        rRest.getInfoPKB(nomorPolisi1, nomorPolisi2, nomorPolisi3, new Callback<List<InfoPKB>>() {
+            @Override
+            public void onResponse(Call<List<InfoPKB>> call, Response<List<InfoPKB>> response) {
+                try{
+                    String test = response.body().get(0).getBEAADMSTNK().toString(); // only for trigggering the NullPointerException
+                    if(!test.isEmpty()){
+                        getInfoPKB(nomorPolisi1, nomorPolisi2, nomorPolisi3);
+                    }
+                }
+                catch (NullPointerException e){
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            getInfoPKB(nomorPolisi1, nomorPolisi2, nomorPolisi3);
+                        }
+                    },4000);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<InfoPKB>> call, Throwable t) {
+                hideProgressBar();
+                ActivityHelper.makeToast(getContext(),
+                        t.getMessage(),
+                        Toast.LENGTH_SHORT);
+            }
+        });
+    }
+
+    private void getInfoPKB(final String nomorPolisi1, final String nomorPolisi2, final String nomorPolisi3) {
         rRest.getInfoPKB(nomorPolisi1, nomorPolisi2, nomorPolisi3, new Callback<List<InfoPKB>>() {
             @Override
             public void onResponse(Call<List<InfoPKB>> call, Response<List<InfoPKB>> response) {
@@ -128,12 +166,6 @@ public class ResultPKBFragment extends Fragment {
                             response.body().get(0).getDESKRIPSI())));
                     textWarna.setText(String.format(getString(R.string.warna),
                             response.body().get(0).getWARNAKB()));
-                } catch (IndexOutOfBoundsException e) {
-                    //Out of bounds because data not available
-                    ActivityHelper.makeToast(getContext(),
-                            String.format(getString(R.string.error_not_registered),
-                                    nullErrorString), Toast.LENGTH_LONG);
-                    getActivity().finish();
                 } catch (NullPointerException e) {
                     ActivityHelper.makeToast(getContext(),
                             getString(R.string.error_server), Toast.LENGTH_LONG);
@@ -171,7 +203,7 @@ public class ResultPKBFragment extends Fragment {
 
         progress = new ProgressDialog(getContext());
         progress.setTitle(getString(R.string.processing));
-        progress.setMessage(getString(R.string.please_wait));
+        progress.setMessage(getString(R.string.please_wait_few_moment));
         progress.setCancelable(true);
         progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progress.show();

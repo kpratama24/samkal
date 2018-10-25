@@ -13,7 +13,9 @@
     <string name="lihat_info_pkb">Lihat info PKB</string>
     <string name="unknown_error">Unknown error occured</string>
     <string name="processing">Processing</string>
-    <string name="please_wait">Please wait...</string>
+    <string name="please_wait">Please wait&#8230;</string>
+    <string name="please_wait_few_moment">This might take a few moments. Please wait&#8230;</string>
+    <string name="bpprd_footer_text">BPPRD Prov.\nKalimantan Utara</string>
 
     <!-- Info pkb section -->
     <string name="info_kendaraan">Info kendaraan</string>

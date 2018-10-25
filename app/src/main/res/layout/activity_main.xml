@@ -7,6 +7,8 @@
     tools:context=".activityxfragment.MainActivity">
 
     <ScrollView
+        android:id="@+id/scroll_main"
+        android:layout_marginBottom="?attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -207,5 +209,30 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/footer_samsat" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/black"
+            android:text="@string/bpprd_footer_text"
+            android:textAllCaps="true"
+            android:paddingStart="4dp"
+            android:paddingEnd="8dp"
+            android:background="#FFFFFF"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:layout_alignParentEnd="true"
+            android:textSize="14sp"/>
+    </RelativeLayout>
 
 </RelativeLayout>
