@@ -17,7 +17,9 @@ import org.kaltimprov.samkal.helper.ActivityHelper;
 import org.kaltimprov.samkal.model.InfoPKB;
 import org.kaltimprov.samkal.network.RESTHelper;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -143,23 +145,23 @@ public class ResultPKBFragment extends Fragment {
                     textTahun.setText(String.format(getString(R.string.tahun),
                             response.body().get(0).getTHBUATAN()));
                     textPkbPok.setText(String.format(getString(R.string.pkb_pok),
-                            response.body().get(0).getPKBPOK()));
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getPKBPOK().toString())))));
                     textPkbDen.setText(String.format(getString(R.string.pkb_den),
-                            response.body().get(0).getPKBDEN()));
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getPKBDEN().toString())))));
                     textPnbpStnk.setText(String.format(getString(R.string.pnbp_stnk),
-                            response.body().get(0).getBEAADMSTNK()));
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getBEAADMSTNK().toString())))));
                     textPnbpTnkb.setText(String.format(getString(R.string.pnbp_tnkb),
-                            response.body().get(0).getBEAADMTNKB()));
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getBEAADMTNKB().toString())))));
                     textSwdklljPok.setText(String.format(getString(R.string.swdkllj_pok),
-                            response.body().get(0).getSWDPOK()));
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getSWDPOK().toString())))));
                     textSwdklljDen.setText(String.format(getString(R.string.swdkllj_den),
-                            response.body().get(0).getSWDDEN()));
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getSWDDEN().toString())))));
                     textTotal.setText(String.format(getString(R.string.total),
-                            response.body().get(0).getTOTALBAYAR()));
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf( response.body().get(0).getTOTALBAYAR().toString())))));
                     textTglPajak.setText(String.format(getString(R.string.tgl_pajak),
-                            response.body().get(0).getTGAKHIRPAJAK()));
+                            ActivityHelper.convertDatabaseDateToLocalDate(response.body().get(0).getTGAKHIRPAJAK().toString())));
                     textTglStnk.setText(String.format(getString(R.string.tgl_stnk),
-                            response.body().get(0).getTGAKHIRSTNKB()));
+                            ActivityHelper.convertDatabaseDateToLocalDate(response.body().get(0).getTGAKHIRSTNKB().toString())));
                     textMilikKe.setText(String.format(getString(R.string.milik_ke),
                             response.body().get(0).getMILIKKE()));
                     textKeterangan.setText(String.format(String.format(getString(R.string.keterangan),

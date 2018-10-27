@@ -19,24 +19,24 @@
 
     <!-- Info pkb section -->
     <string name="info_kendaraan">Info kendaraan</string>
-    <string name="merk">Merk            : %1s</string>
-    <string name="model">Model          : %1s</string>
-    <string name="tahun">Tahun          : %1s</string>
-    <string name="warna">Warna          : %1s</string>
-    <string name="no_rangka">No Rangka  : %1s </string>
-    <string name="no_mesin">No Mesin    : %1s</string>
+    <string name="merk">Merk \u0009\u0009\u0009\u0009\u0009: %1s</string>
+    <string name="model">Model \u0009\u0009\u0009\u0009\u0009: %1s</string>
+    <string name="tahun">Tahun \u0009\u0009\u0009\u0009\u0009: %1s</string>
+    <string name="warna">Warna \u0009\u0009\u0009\u0009\u0009: %1s</string>
+    <string name="no_rangka">No Rangka \u0009: %1s </string>
+    <string name="no_mesin">No Mesin \u0009\u0009: %1s</string>
     <string name="info_pajak_kendaraan">Info pajak kendaraan dan PNBP</string>
-    <string name="pkb_pok">PKB POK      : %1s</string>
-    <string name="pkb_den">PKB DEN      : %1s</string>
-    <string name="swdkllj_pok">SWDKLLJ POK      : %1s </string>
-    <string name="swdkllj_den">SWDKLLJ DEN      : %1s </string>
-    <string name="pnbp_stnk">PNBP STNK      : %1s </string>
-    <string name="pnbp_tnkb">PNBP TNKB      : %1s </string>
-    <string name="total">TOTAL      : %1s </string>
-    <string name="tgl_pajak">TGL PAJAK      : %1s </string>
-    <string name="tgl_stnk">TGL STNK        : %1s </string>
-    <string name="milik_ke">MILIK KE        : %1s </string>
-    <string name="keterangan">KETERANGAN        : %1s </string>
+    <string name="pkb_pok">PKB POK \u0009\u0009\u0009\u0009\u0009\u0009: %1s</string>
+    <string name="pkb_den">PKB DEN \u0009\u0009\u0009\u0009\u0009: %1s</string>
+    <string name="swdkllj_pok">SWDKLLJ POK \u0009\u0009: %1s </string>
+    <string name="swdkllj_den">SWDKLLJ DEN \u0009: %1s </string>
+    <string name="pnbp_stnk">PNBP STNK\u0009\u0009\u0009\u0009: %1s </string>
+    <string name="pnbp_tnkb">PNBP TNKB\u0009\u0009\u0009\u0009: %1s </string>
+    <string name="total">TOTAL \u0009\u0009\u0009\u0009\u0009\u0009\u0009: %1s </string>
+    <string name="tgl_pajak">TGL PAJAK\u0009\u0009\u0009\u0009: %1s </string>
+    <string name="tgl_stnk">TGL STNK \u0009\u0009\u0009\u0009\u0009: %1s </string>
+    <string name="milik_ke">MILIK KE \u0009\u0009\u0009\u0009\u0009: %1s </string>
+    <string name="keterangan">KETERANGAN \u0009\u0009: %1s </string>
 
 
     <!-- Error section -->

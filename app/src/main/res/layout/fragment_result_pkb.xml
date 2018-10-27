@@ -47,47 +47,47 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/merk"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/text_model"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/model"
-                    android:layout_marginTop="8dp"
-                    android:textSize="18sp"/>
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/text_tahun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="4dp"
                     android:text="@string/tahun"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/text_warna"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/warna"
-                    android:layout_marginTop="8dp"
-                    android:textSize="18sp"/>
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/text_no_rangka"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/no_rangka"
-                    android:layout_marginTop="8dp"
-                    android:textSize="18sp"/>
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/text_no_mesin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/no_mesin"
-                    android:layout_marginTop="8dp"
-                    android:textSize="18sp"/>
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -127,88 +127,88 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pkb_pok"
-                android:layout_marginTop="8dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/text_pkb_den"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pkb_den"
-                android:layout_marginTop="8dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/text_swdkllj_pok"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/swdkllj_pok"
-                android:layout_marginTop="8dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/text_swdkllj_den"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/swdkllj_den"
-                android:layout_marginTop="8dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/text_pnbp_stnk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pnbp_stnk"
-                android:layout_marginTop="8dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/text_pnbp_tnkb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pnbp_tnkb"
-                android:layout_marginTop="8dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/text_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/total"
-                android:layout_marginTop="8dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/text_tgl_pajak"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tgl_pajak"
-                android:layout_marginTop="8dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/text_tgl_stnk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tgl_stnk"
-                android:layout_marginTop="8dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/text_milik_ke"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/milik_ke"
-                android:layout_marginTop="8dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/text_keterangan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/keterangan"
-                android:layout_marginTop="8dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"/>
 
         </LinearLayout>
         </LinearLayout>
