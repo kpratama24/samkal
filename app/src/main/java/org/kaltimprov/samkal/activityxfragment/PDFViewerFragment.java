@@ -61,7 +61,7 @@ public class PDFViewerFragment extends Fragment {
      * Method to set pdf url according to pdf_type obtained from Intent
      */
     private void setPDFUrl() {
-        String pdf_url_prefix = "http://docs.bpprdku.net/"; //subject to change accordingly
+        String pdf_url_prefix = "http://proxy.bpprdku.net/"; //subject to change accordingly
         try {
             int pdf_type = ((PDFViewerActivity) getActivity()).getPdf_type();
             Log.d("PDF_TYPE",String.valueOf(pdf_type));

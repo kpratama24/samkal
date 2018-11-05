@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RESTHelper {
 
     private static Retrofit retrofit;
-    private static final String API_BASE_URL = "http://android.bpprdku.net/";
+    private static final String API_BASE_URL = "http://proxy.bpprdku.net/";
 
     /**
      * Method to get the required retrofit instance
