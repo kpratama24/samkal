@@ -19,7 +19,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:src="@drawable/banner_samsat"/>
+                android:src="@drawable/header_kaltara"/>
 
             <TextView
                 android:layout_width="match_parent"
