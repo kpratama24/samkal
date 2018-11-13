@@ -11,7 +11,7 @@
         android:layout_width="240dp"
         android:layout_height="240dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/ic_logo_kaltara" />
+        android:src="@drawable/ic_logo_prov_kaltara" />
 
     <TextView
         android:layout_width="wrap_content"

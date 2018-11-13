@@ -144,30 +144,30 @@ public class ResultPKBFragment extends Fragment {
                             response.body().get(0).getNORANGKA()));
                     textTahun.setText(String.format(getString(R.string.tahun),
                             response.body().get(0).getTHBUATAN()));
-                    textPkbPok.setText(String.format(getString(R.string.pkb_pok),
-                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getPKBPOK().toString())))));
-                    textPkbDen.setText(String.format(getString(R.string.pkb_den),
-                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getPKBDEN().toString())))));
-                    textPnbpStnk.setText(String.format(getString(R.string.pnbp_stnk),
-                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getBEAADMSTNK().toString())))));
-                    textPnbpTnkb.setText(String.format(getString(R.string.pnbp_tnkb),
-                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getBEAADMTNKB().toString())))));
-                    textSwdklljPok.setText(String.format(getString(R.string.swdkllj_pok),
-                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getSWDPOK().toString())))));
-                    textSwdklljDen.setText(String.format(getString(R.string.swdkllj_den),
-                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getSWDDEN().toString())))));
-                    textTotal.setText(String.format(getString(R.string.total),
-                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf( response.body().get(0).getTOTALBAYAR().toString())))));
-                    textTglPajak.setText(String.format(getString(R.string.tgl_pajak),
-                            ActivityHelper.convertDatabaseDateToLocalDate(response.body().get(0).getTGAKHIRPAJAK().toString())));
-                    textTglStnk.setText(String.format(getString(R.string.tgl_stnk),
-                            ActivityHelper.convertDatabaseDateToLocalDate(response.body().get(0).getTGAKHIRSTNKB().toString())));
-                    textMilikKe.setText(String.format(getString(R.string.milik_ke),
-                            response.body().get(0).getMILIKKE()));
-                    textKeterangan.setText(String.format(String.format(getString(R.string.keterangan),
-                            response.body().get(0).getDESKRIPSI())));
-                    textWarna.setText(String.format(getString(R.string.warna),
-                            response.body().get(0).getWARNAKB()));
+                    textPkbPok.setText(
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getPKBPOK().toString()))));
+                    textPkbDen.setText(
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getPKBDEN().toString()))));
+                    textPnbpStnk.setText(
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getBEAADMSTNK().toString()))));
+                    textPnbpTnkb.setText(
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getBEAADMTNKB().toString()))));
+                    textSwdklljPok.setText(
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getSWDPOK().toString()))));
+                    textSwdklljDen.setText(
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getSWDDEN().toString()))));
+                    textTotal.setText(
+                            ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf( response.body().get(0).getTOTALBAYAR().toString()))));
+                    textTglPajak.setText(
+                            ActivityHelper.convertDatabaseDateToLocalDate(response.body().get(0).getTGAKHIRPAJAK().toString()));
+                    textTglStnk.setText(
+                            ActivityHelper.convertDatabaseDateToLocalDate(response.body().get(0).getTGAKHIRSTNKB().toString()));
+                    textMilikKe.setText(
+                            response.body().get(0).getMILIKKE().toString());
+                    textKeterangan.setText(
+                            response.body().get(0).getDESKRIPSI());
+                    textWarna.setText(
+                            response.body().get(0).getWARNAKB().toString());
                 } catch (NullPointerException e) {
                     ActivityHelper.makeToast(getContext(),
                             getString(R.string.error_server), Toast.LENGTH_LONG);

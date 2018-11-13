@@ -1,5 +1,8 @@
 package org.kaltimprov.samkal.network;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import org.kaltimprov.samkal.model.InfoPKB;
 
 import java.util.List;
@@ -12,17 +15,21 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RESTHelper {
 
     private static Retrofit retrofit;
-    private static final String API_BASE_URL = "http://proxy.bpprdku.net/";
+    private static final String API_BASE_URL = "http://android.bpprdku.net/"; //TODO change
 
     /**
      * Method to get the required retrofit instance
      * @return retrofit instance
      */
     private static Retrofit getRetrofitInstance(){
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+
         if(retrofit==null){
             retrofit = new Retrofit.Builder()
                     .baseUrl(API_BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
         }
         return retrofit;

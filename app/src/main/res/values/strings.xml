@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SAMKAL</string>
+    <string name="app_name">SAMSATKU</string>
     <string name="info_dan_layanan">Info dan Layanan</string>
     <string name="info_pkb">Info PKB</string>
     <string name="bpprd">BPPRD</string>
@@ -26,17 +26,17 @@
     <string name="no_rangka">No Rangka \u0009: %1s </string>
     <string name="no_mesin">No Mesin \u0009\u0009: %1s</string>
     <string name="info_pajak_kendaraan">Info pajak kendaraan dan PNBP</string>
-    <string name="pkb_pok">PKB POK \u0009\u0009\u0009\u0009\u0009\u0009: %1s</string>
-    <string name="pkb_den">PKB DEN \u0009\u0009\u0009\u0009\u0009: %1s</string>
-    <string name="swdkllj_pok">SWDKLLJ POK \u0009\u0009: %1s </string>
-    <string name="swdkllj_den">SWDKLLJ DEN \u0009: %1s </string>
-    <string name="pnbp_stnk">PNBP STNK\u0009\u0009\u0009\u0009: %1s </string>
-    <string name="pnbp_tnkb">PNBP TNKB\u0009\u0009\u0009\u0009: %1s </string>
-    <string name="total">TOTAL \u0009\u0009\u0009\u0009\u0009\u0009\u0009: %1s </string>
-    <string name="tgl_pajak">TGL PAJAK\u0009\u0009\u0009\u0009: %1s </string>
-    <string name="tgl_stnk">TGL STNK \u0009\u0009\u0009\u0009\u0009: %1s </string>
-    <string name="milik_ke">MILIK KE \u0009\u0009\u0009\u0009\u0009: %1s </string>
-    <string name="keterangan">KETERANGAN \u0009\u0009: %1s </string>
+    <string name="pkb_pok">PKB POK</string>
+    <string name="pkb_den">PKB DEN</string>
+    <string name="swdkllj_pok">SWDKLLJ POK</string>
+    <string name="swdkllj_den">SWDKLLJ DEN</string>
+    <string name="pnbp_stnk">PNBP STNK</string>
+    <string name="pnbp_tnkb">PNBP TNKB</string>
+    <string name="total">TOTAL</string>
+    <string name="tgl_pajak">TGL PAJAK</string>
+    <string name="tgl_stnk">TGL STNK</string>
+    <string name="milik_ke">MILIK KE</string>
+    <string name="keterangan">KETERANGAN</string>
 
 
     <!-- Error section -->
