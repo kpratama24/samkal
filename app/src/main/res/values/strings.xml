@@ -24,7 +24,7 @@
     <string name="tahun">Tahun \u0009\u0009\u0009\u0009\u0009: %1s</string>
     <string name="warna">Warna \u0009\u0009\u0009\u0009: %1s</string>
     <string name="no_rangka">No Rangka \u0009: %1s </string>
-    <string name="no_mesin">No Mesin \u0009\u0009: %1s</string>
+    <string name="no_mesin">No Mesin \u0009\u0009\u0009: %1s</string>
     <string name="info_pajak_kendaraan">Info pajak kendaraan dan PNBP</string>
     <string name="pkb_pok">PKB POK</string>
     <string name="pkb_den">PKB DEN</string>

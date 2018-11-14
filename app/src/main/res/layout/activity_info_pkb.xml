@@ -10,7 +10,7 @@
         android:id="@+id/image_banner_samsat"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:src="@drawable/banner_samsat"/>
+        android:src="@drawable/header_kaltara"/>
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
