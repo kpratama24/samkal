@@ -1,12 +1,11 @@
-package org.kaltimprov.samkal.network;
+package bpprd.kaltaraprov.samsatku.network;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import org.kaltimprov.samkal.model.InfoPKB;
-
 import java.util.List;
 
+import bpprd.kaltaraprov.samsatku.model.InfoPKB;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;

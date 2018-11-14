@@ -1,10 +1,10 @@
-package org.kaltimprov.samkal.network;
+package bpprd.kaltaraprov.samsatku.network;
 
 
-import org.kaltimprov.samkal.model.InfoPKB;
 
 import java.util.List;
 
+import bpprd.kaltaraprov.samsatku.model.InfoPKB;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

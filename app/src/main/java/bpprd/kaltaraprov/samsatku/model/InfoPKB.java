@@ -1,4 +1,4 @@
-package org.kaltimprov.samkal.model;
+package bpprd.kaltaraprov.samsatku.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

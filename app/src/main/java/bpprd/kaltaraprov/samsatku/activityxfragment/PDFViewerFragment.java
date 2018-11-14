@@ -1,4 +1,4 @@
-package org.kaltimprov.samkal.activityxfragment;
+package bpprd.kaltaraprov.samsatku.activityxfragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,7 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.kaltimprov.samkal.R;
+import bpprd.kaltaraprov.samsatku.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -92,6 +92,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/mekanisme_e_samsat"
+                        android:maxLines="1"
+                        android:ellipsize="end"
                         android:textAlignment="center"/>
                 </LinearLayout>
                 <LinearLayout
@@ -117,6 +119,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/lokasi_e_samsat"
+                        android:maxLines="1"
+                        android:ellipsize="end"
                         android:textAlignment="center"/>
                 </LinearLayout>
             </LinearLayout>
@@ -152,6 +156,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:ellipsize="end"
                         android:text="@string/persyaratan_e_samsat"
                         android:textAlignment="center"/>
                 </LinearLayout>
@@ -179,6 +185,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/jadwal_samling"
+                        android:maxLines="1"
+                        android:ellipsize="end"
                         android:textAlignment="center"/>
                 </LinearLayout>
                 <LinearLayout

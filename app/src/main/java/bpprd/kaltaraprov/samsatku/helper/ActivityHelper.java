@@ -1,4 +1,4 @@
-package org.kaltimprov.samkal.helper;
+package bpprd.kaltaraprov.samsatku.helper;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,8 +10,6 @@ import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class ActivityHelper {
 

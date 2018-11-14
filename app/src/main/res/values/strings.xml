@@ -19,10 +19,10 @@
 
     <!-- Info pkb section -->
     <string name="info_kendaraan">Info kendaraan</string>
-    <string name="merk">Merk \u0009\u0009\u0009\u0009\u0009: %1s</string>
+    <string name="merk">Merk \u0009\u0009\u0009\u0009\u0009\u0009: %1s</string>
     <string name="model">Model \u0009\u0009\u0009\u0009\u0009: %1s</string>
     <string name="tahun">Tahun \u0009\u0009\u0009\u0009\u0009: %1s</string>
-    <string name="warna">Warna \u0009\u0009\u0009\u0009\u0009: %1s</string>
+    <string name="warna">Warna \u0009\u0009\u0009\u0009: %1s</string>
     <string name="no_rangka">No Rangka \u0009: %1s </string>
     <string name="no_mesin">No Mesin \u0009\u0009: %1s</string>
     <string name="info_pajak_kendaraan">Info pajak kendaraan dan PNBP</string>

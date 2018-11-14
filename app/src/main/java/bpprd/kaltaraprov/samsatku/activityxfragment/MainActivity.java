@@ -1,4 +1,4 @@
-package org.kaltimprov.samkal.activityxfragment;
+package bpprd.kaltaraprov.samsatku.activityxfragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import org.kaltimprov.samkal.R;
+import bpprd.kaltaraprov.samsatku.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

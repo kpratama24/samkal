@@ -1,4 +1,4 @@
-package org.kaltimprov.samkal;
+package bpprd.kaltaraprov.samsatku;
 
 import org.junit.Test;
 

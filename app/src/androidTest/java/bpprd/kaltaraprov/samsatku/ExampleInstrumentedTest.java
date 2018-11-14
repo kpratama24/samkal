@@ -1,4 +1,4 @@
-package org.kaltimprov.samkal;
+package bpprd.kaltaraprov.samsatku;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

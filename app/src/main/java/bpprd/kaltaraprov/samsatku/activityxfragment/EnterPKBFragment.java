@@ -1,4 +1,4 @@
-package org.kaltimprov.samkal.activityxfragment;
+package bpprd.kaltaraprov.samsatku.activityxfragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,15 +8,15 @@ import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import org.kaltimprov.samkal.R;
-import org.kaltimprov.samkal.helper.ActivityHelper;
+import bpprd.kaltaraprov.samsatku.R;
+
+import bpprd.kaltaraprov.samsatku.helper.ActivityHelper;
 
 public class EnterPKBFragment extends Fragment {
 

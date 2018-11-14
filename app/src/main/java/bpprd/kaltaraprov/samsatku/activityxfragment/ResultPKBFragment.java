@@ -1,4 +1,4 @@
-package org.kaltimprov.samkal.activityxfragment;
+package bpprd.kaltaraprov.samsatku.activityxfragment;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -12,15 +12,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.kaltimprov.samkal.R;
-import org.kaltimprov.samkal.helper.ActivityHelper;
-import org.kaltimprov.samkal.model.InfoPKB;
-import org.kaltimprov.samkal.network.RESTHelper;
-
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 
+import bpprd.kaltaraprov.samsatku.R;
+import bpprd.kaltaraprov.samsatku.helper.ActivityHelper;
+import bpprd.kaltaraprov.samsatku.model.InfoPKB;
+import bpprd.kaltaraprov.samsatku.network.RESTHelper;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -144,6 +143,8 @@ public class ResultPKBFragment extends Fragment {
                             response.body().get(0).getNORANGKA()));
                     textTahun.setText(String.format(getString(R.string.tahun),
                             response.body().get(0).getTHBUATAN()));
+                    textWarna.setText(String.format(getString(R.string.warna),
+                            response.body().get(0).getWARNAKB().toString()));
                     textPkbPok.setText(
                             ActivityHelper.changeCommaToFullStop(NumberFormat.getInstance(Locale.ENGLISH).format(Integer.valueOf(response.body().get(0).getPKBPOK().toString()))));
                     textPkbDen.setText(
@@ -166,8 +167,6 @@ public class ResultPKBFragment extends Fragment {
                             response.body().get(0).getMILIKKE().toString());
                     textKeterangan.setText(
                             response.body().get(0).getDESKRIPSI());
-                    textWarna.setText(
-                            response.body().get(0).getWARNAKB().toString());
                 } catch (NullPointerException e) {
                     ActivityHelper.makeToast(getContext(),
                             getString(R.string.error_server), Toast.LENGTH_LONG);

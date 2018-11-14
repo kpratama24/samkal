@@ -1,12 +1,13 @@
-package org.kaltimprov.samkal.activityxfragment;
+package bpprd.kaltaraprov.samsatku.activityxfragment;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import org.kaltimprov.samkal.R;
-import org.kaltimprov.samkal.helper.ActivityHelper;
+import bpprd.kaltaraprov.samsatku.R;
+
+import bpprd.kaltaraprov.samsatku.helper.ActivityHelper;
 
 public class InfoPKBActivity extends AppCompatActivity {
 
