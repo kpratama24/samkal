@@ -11,7 +11,7 @@
         android:layout_width="240dp"
         android:layout_height="240dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/ic_logo_prov_kaltara" />
+        android:src="@drawable/e_samsat" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,9 +19,10 @@
         android:layout_centerInParent="true"
         android:layout_below="@id/image_logo_kaltara"
         android:layout_marginTop="8dp"
-        android:textSize="32sp"
+        android:textSize="28sp"
         android:text="@string/bpprd"
         android:textAllCaps="true"
+        android:textAlignment="center"
         android:textStyle="bold"
         android:textColor="@android:color/black"/>
 
